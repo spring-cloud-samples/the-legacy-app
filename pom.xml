@@ -18,6 +18,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
+	<properties>
+		<spring-cloud.version>Greenwich.BUILD-SNAPSHOT</spring-cloud.version>
+	</properties>
+
 	<!-- We're adding the sc-contract plugin so as to create a stubbed response -->
 
 	<dependencyManagement>
@@ -25,7 +29,7 @@
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-dependencies</artifactId>
-				<version>Greenwich.BUILD-SNAPSHOT</version>
+				<version>${spring-cloud.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
@@ -38,8 +42,6 @@
 		<module>stubs</module>
 		<module>stubs_with_proxy</module>
 	</modules>
-
-
 
 	<repositories>
 		<repository>
