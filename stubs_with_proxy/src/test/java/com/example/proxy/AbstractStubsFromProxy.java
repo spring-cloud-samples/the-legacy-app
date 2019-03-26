@@ -59,7 +59,7 @@ public abstract class AbstractStubsFromProxy {
 	 * <pre>
 	 *     WireMock.startRecording(
 	 *     WireMock.recordSpec()
-	 *     .forTarget("http://example.mocklab.io")
+	 *     .forTarget("https://example.mocklab.io")
 	 *     .onlyRequestsMatching(getRequestedFor(urlPathMatching("/api/.*")))
 	 *     .captureHeader("Accept")
 	 *     .captureHeader("Content-Type", true)
