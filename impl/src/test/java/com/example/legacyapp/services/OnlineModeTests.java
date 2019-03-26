@@ -24,7 +24,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 		webEnvironment = NONE)
 @AutoConfigureStubRunner(
 		ids = "com.example.github:github-webhook:+:stubs:7654",
-		repositoryRoot = "http://repo.spring.io/libs-milestone-local"
+		repositoryRoot = "https://repo.spring.io/libs-milestone-local"
 )
 public class OnlineModeTests {
 
