@@ -10,7 +10,7 @@ STUBRUNNER_PORT="8083"
 STUBRUNNER_IDS="com.example:the-legacy-app-stubs-with-proxy:+:stubs:8765"
 
 # Would have to pass it if the stubs were in a remote location
-#STUBRUNNER_REPOSITORY_ROOT="http://repo.spring.io/libs-milestone-local"
+#STUBRUNNER_REPOSITORY_ROOT="https://repo.spring.io/libs-milestone-local"
 #STUBRUNNER_STUBS_MODE="REMOTE"
 
 # We pass a volume with our local .m2 to fetch local stubs
