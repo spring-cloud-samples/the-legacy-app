@@ -14,7 +14,7 @@ public class CreateStubsFromProxyTests extends AbstractStubsFromProxy {
 	}
 
 	@Override protected RestTemplateBuilder configure(RestTemplateBuilder builder) {
-		return builder.basicAuthorization("sk_test_BQokikJOvBiI2HlWgH4olfQ2", "");
+		return builder.basicAuthentication("sk_test_BQokikJOvBiI2HlWgH4olfQ2", "");
 	}
 
 	@Test
