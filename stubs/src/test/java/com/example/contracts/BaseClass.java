@@ -1,5 +1,7 @@
 package com.example.contracts;
 
+import java.util.Map;
+
 import io.restassured.RestAssured;
 import io.restassured.config.RestAssuredConfig;
 import org.assertj.core.api.BDDAssertions;
@@ -18,9 +20,9 @@ public class BaseClass {
 				RestAssured.basic("sk_test_BQokikJOvBiI2HlWgH4olfQ2", "");
 	}
 
-	public void assertResponse(String response) {
+	public void assertResponse(Map<String, Object> response) {
 		BDDAssertions.then(response)
 				.isNotEmpty()
-				.contains("\"object\": \"charge\"");
+				.containsKeys("data");
 	}
 }
