@@ -4,9 +4,8 @@ import com.example.legacyapp.TheLegacyApp;
 import com.example.legacyapp.dto.Charges;
 import com.example.legacyapp.services.CustomerRentalHistoryManager;
 import org.assertj.core.api.BDDAssertions;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cloud.contract.stubrunner.spring.AutoConfigureStubRunner;
@@ -21,7 +20,6 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
  *
  * @author Marcin Grzejszczak
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = TheLegacyApp.class,
 		properties = "api.url=http://localhost:9765",
 		webEnvironment = NONE)
@@ -30,7 +28,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 		// in Intellij you have to use workOffline
 		,		stubsMode = StubRunnerProperties.StubsMode.LOCAL
 )
-@Ignore("First install the [custom-rental-history] stubs")
+@Disabled("First install the [custom-rental-history] stubs")
 public class CustomerWithStubRunnerExternalContractsTests {
 
 	@Autowired CustomerRentalHistoryManager manager;

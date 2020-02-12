@@ -1,16 +1,11 @@
 package com.example.legacyapp.services;
 
 import com.example.legacyapp.TheLegacyApp;
-import com.example.legacyapp.dto.Charges;
 import org.assertj.core.api.BDDAssertions;
-import org.junit.Ignore;
-import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.cloud.contract.stubrunner.spring.AutoConfigureStubRunner;
 import org.springframework.cloud.contract.stubrunner.spring.StubRunnerProperties;
-import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.client.RestTemplate;
 
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.NONE;
@@ -20,7 +15,6 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
  *
  * @author Marcin Grzejszczak
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = TheLegacyApp.class,
 		webEnvironment = NONE)
 @AutoConfigureStubRunner(

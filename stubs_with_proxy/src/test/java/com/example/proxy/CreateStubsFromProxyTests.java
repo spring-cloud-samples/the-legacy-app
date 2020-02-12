@@ -1,7 +1,7 @@
 package com.example.proxy;
 
 import com.github.tomakehurst.wiremock.recording.RecordSpecBuilder;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.springframework.boot.web.client.RestTemplateBuilder;
 import org.springframework.http.ResponseEntity;
 

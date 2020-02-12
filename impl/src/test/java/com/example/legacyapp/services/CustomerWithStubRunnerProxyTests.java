@@ -3,8 +3,7 @@ package com.example.legacyapp.services;
 import static org.springframework.boot.test.context.SpringBootTest.WebEnvironment.NONE;
 
 import org.assertj.core.api.BDDAssertions;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,7 +20,6 @@ import com.example.legacyapp.dto.Charges;
  *
  * @author Marcin Grzejszczak
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = CustomerWithStubRunnerProxyTests.Config.class,
 		properties = "api.url=http://localhost:6765",
 		webEnvironment = NONE)

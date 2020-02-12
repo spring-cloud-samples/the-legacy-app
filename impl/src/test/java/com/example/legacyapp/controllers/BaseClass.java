@@ -6,14 +6,14 @@ import com.example.legacyapp.dto.Charge;
 import com.example.legacyapp.dto.Charges;
 import com.example.legacyapp.services.CustomerRentalHistoryManager;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 
 /**
  * @author Marcin Grzejszczak
  */
 public class BaseClass {
 
-	@Before
+	@BeforeEach
 	public void setup() {
 		FraudDetectionImplBaseController controller = new FraudDetectionImplBaseController();
 		controller.manager = new CustomerRentalHistoryManager() {

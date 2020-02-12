@@ -3,8 +3,7 @@ package com.example.legacyapp.services;
 import com.example.legacyapp.TheLegacyApp;
 import com.example.legacyapp.dto.Charges;
 import org.assertj.core.api.BDDAssertions;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Bean;
@@ -17,7 +16,6 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 /**
  * @author Marcin Grzejszczak
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = {TheLegacyApp.class,
 		CustomerRentalHistoryManagerImplTests.Config.class},
 		webEnvironment = NONE)

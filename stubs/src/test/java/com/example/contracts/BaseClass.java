@@ -5,14 +5,14 @@ import java.util.Map;
 import io.restassured.RestAssured;
 import io.restassured.config.RestAssuredConfig;
 import org.assertj.core.api.BDDAssertions;
-import org.junit.Before;
+import org.junit.jupiter.api.BeforeEach;
 
 /**
  * @author Marcin Grzejszczak
  */
 public class BaseClass {
 
-	@Before
+	@BeforeEach
 	public void setup() {
 		RestAssured.baseURI =
 				"https://api.stripe.com/";

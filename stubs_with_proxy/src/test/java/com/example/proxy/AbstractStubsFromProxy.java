@@ -4,11 +4,9 @@ import java.io.File;
 import java.nio.file.Files;
 import java.util.List;
 
-import org.junit.After;
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.rules.TestName;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.TestInfo;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.client.RestTemplateBuilder;
@@ -30,17 +28,15 @@ import com.github.tomakehurst.wiremock.stubbing.StubMapping;
  *
  * @author Marcin Grzejszczak
  */
-@RunWith(SpringRunner.class)
 @SpringBootTest(classes = AbstractStubsFromProxy.Config.class,
 		webEnvironment = SpringBootTest.WebEnvironment.NONE)
 @AutoConfigureWireMock
 public abstract class AbstractStubsFromProxy {
-	@Rule public TestName testName = new TestName();
 	@Value("${wiremock.port:8080}") int wireMockPort;
 
 	protected RestTemplate restTemplate;
 
-	@Before
+	@BeforeEach
 	public void setup() {
 		// setup
 		WireMock.startRecording(configure(WireMock.recordSpec())
@@ -94,19 +90,19 @@ public abstract class AbstractStubsFromProxy {
 		return stubMapping;
 	}
 
-	@After
-	public void tearDown() {
+	@AfterEach
+	public void tearDown(TestInfo testInfo) {
 		SnapshotRecordResult recording = WireMock.stopRecording();
 		List<StubMapping> mappings = recording.getStubMappings();
-		storeMappings(mappings);
+		storeMappings(mappings, testInfo);
 	}
 
-	private void storeMappings(List<StubMapping> mappings) {
+	private void storeMappings(List<StubMapping> mappings, TestInfo testInfo) {
 		try {
 			File proxiedStubs = new File("target/stubs");
 			proxiedStubs.mkdirs();
 			for (StubMapping mapping : mappings) {
-				File stub = new File(proxiedStubs, testName.getMethodName() + ".json");
+				File stub = new File(proxiedStubs, testInfo.getDisplayName() + ".json");
 				stub.createNewFile();
 				Files.write(stub.toPath(), configure(mapping).toString().getBytes());
 			}
