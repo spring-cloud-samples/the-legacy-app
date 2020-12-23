@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # Provide the Spring Cloud Contract Docker version
-SC_CONTRACT_DOCKER_VERSION="3.0.0-SNAPSHOT"
+SC_CONTRACT_DOCKER_VERSION="3.0.1-SNAPSHOT"
 
 # Spring Cloud Contract Stub Runner properties
 STUBRUNNER_PORT="8083"
