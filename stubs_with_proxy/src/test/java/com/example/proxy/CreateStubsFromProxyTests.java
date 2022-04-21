@@ -10,7 +10,7 @@ import static org.assertj.core.api.BDDAssertions.then;
 public class CreateStubsFromProxyTests extends AbstractStubsFromProxy {
 
 	@Override protected RecordSpecBuilder configure(RecordSpecBuilder builder) {
-		return builder.forTarget("https://api.stripe.com/");
+		return builder.forTarget("https://api.stripe.com");
 	}
 
 	@Override protected RestTemplateBuilder configure(RestTemplateBuilder builder) {
