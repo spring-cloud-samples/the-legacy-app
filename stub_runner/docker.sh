@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 
 # Provide the Spring Cloud Contract Docker version
-SC_CONTRACT_DOCKER_VERSION="3.1.0-SNAPSHOT"
+SC_CONTRACT_DOCKER_VERSION="4.0.0-SNAPSHOT"
 
 # Spring Cloud Contract Stub Runner properties
-STUBRUNNER_PORT="8083"
+STUBRUNNER_PORT="8750"
 
 # Stub coordinates 'groupId:artifactId:version:classifier:port'
 STUBRUNNER_IDS="com.example:the-legacy-app-stubs-with-proxy:+:stubs:8765"
@@ -14,7 +14,7 @@ STUBRUNNER_IDS="com.example:the-legacy-app-stubs-with-proxy:+:stubs:8765"
 #STUBRUNNER_STUBS_MODE="REMOTE"
 
 # We pass a volume with our local .m2 to fetch local stubs
-# "${HOME}/.m2/:/root/.m2:ro"
+# "${HOME}/.m2/:/home/scc/.m2:rw"
 
 # Run the docker with Stub Runner Boot
 docker run  --rm \
@@ -22,5 +22,5 @@ docker run  --rm \
 -e "STUBRUNNER_STUBS_MODE=LOCAL" \
 -p "${STUBRUNNER_PORT}:${STUBRUNNER_PORT}" \
 -p "8765:8765" \
--v "${HOME}/.m2/:/root/.m2:ro" \
+-v "${HOME}/.m2/:/home/scc/.m2:rw" \
 springcloud/spring-cloud-contract-stub-runner:"${SC_CONTRACT_DOCKER_VERSION}"
