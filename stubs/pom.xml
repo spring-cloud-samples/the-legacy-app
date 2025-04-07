@@ -23,7 +23,7 @@
 		<java.version>17</java.version>
 		<!-- We don't want to run the generated tests -->
 		<!--<skipTests>true</skipTests>-->
-		<spring-cloud-contract.version>4.2.2-SNAPSHOT</spring-cloud-contract.version>
+		<spring-cloud-contract.version>4.3.0-SNAPSHOT</spring-cloud-contract.version>
 	</properties>
 
 	<dependencies>
